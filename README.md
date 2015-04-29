@@ -34,9 +34,11 @@ Without configuration, the library will act on memory only (which of course mean
 ```ruby
 MaintenanceMode.persist_with :file, Rails.root.join('config/maintenance-mode')
 # equivalent to
-MaintenanceMode.persistence = MaintenanceMode::File.new(
+MaintenanceMode.persistence = MaintenanceMode::FilePersistence.new(
     Rails.root.join('config/maintenance-mode'))
 ```
+
+n.b. The argument to `FilePersistence` must be a `Pathname` instead of merely a string.
 
 ### Custom logic
 
@@ -54,7 +56,7 @@ Here's an example using Redis for persistence (this is untested; just for exampl
 class MyRedisMaintenancePersistence
   NULL = '__null__'
 
-  def initialize(redis:, key:)
+  def initialize(redis, key)
     @redis = redis
     @key = key
   end
@@ -77,8 +79,15 @@ class MyRedisMaintenancePersistence
   end
 end
 
-r = MyRedisMaintenancePersistence.new(redis: Redis.new, key: 'maintenance-mode')
+r = MyRedisMaintenancePersistence.new(Redis.new, 'maintenance-mode')
 MaintenanceMode.persistence = r
+
+# If writing as a separately distributed library, you could have your code
+# register itself:
+MaintenanceMode.register_persistence_method :redis, MyRedisMaintenancePersistence
+
+# then people can use it via:
+MaintenanceMode.persist_with :redis, Redis.new, 'maintenance-mode'
 ```
 
 ## Contributing
