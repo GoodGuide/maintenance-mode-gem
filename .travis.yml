@@ -7,3 +7,6 @@ rvm:
   - rbx-2
   - ruby-head
   - jruby-head
+install:
+  - gem install bundler
+  - bundle install --jobs=4 --retry=5
