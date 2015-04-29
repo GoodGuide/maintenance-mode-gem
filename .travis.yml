@@ -13,7 +13,7 @@ bundler_args: --jobs=4 --retry=5
 deploy:
   provider: rubygems
   api_key:
-    secure: gbBqI1p8WM6THQeZIIEWtATjQ1EQCSkujVPCPxjczh7BSINP2pWrtv+z24EUyMzkDz5lQS4cxnsRqRMI/PPnkcJDcFoVGGT/orc65/2KEUHb76DmcNZxLndW1usTy3MIKYcv4X3iVReG5whGWVwzTNy717HE5l8CB1uh90jJljk=
+    secure: "W+pWQIBNMQBTwRniG4ONh6XgndO/AjqbfZkqy57A0FuhHC55tIrQhiwWIWXip1lTlqVygVLpywgr4uye8BKmCdJb6ScxaO6OGDHKfwqWLRSdD7+wleKlxSHNhkj6yFYkb3KdCftsvyucOqqF2V004qAPpUKvnnt6abNd/2Ke2vI="
   gem: maintenance_mode
   on:
     repo: GoodGuide/maintenance_mode
