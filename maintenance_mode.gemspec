@@ -6,7 +6,7 @@ require 'maintenance_mode/version'
 Gem::Specification.new do |spec|
   spec.name          = 'maintenance_mode'
   if ENV['TRAVIS']
-    spec.version       = "#{MaintenanceMode::VERSION}.alpha.#{ENV['TRAVIS_BUILD_NUMBER']}"
+    spec.version       = "#{MaintenanceMode::VERSION}-p#{ENV['TRAVIS_BUILD_NUMBER']}"
   else
     spec.version       = MaintenanceMode::VERSION
   end
