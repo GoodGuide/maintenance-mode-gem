@@ -17,6 +17,10 @@ MaintenanceMode.disable
 MaintenanceMode.enabled? # => false
 ```
 
+There is no magic here; if you want to apply this to your web app, just build a
+response handler with the result of `MaintenanceMode.as_json` or something to
+that effect.
+
 There are also rake tasks to toggle MaintenanceMode:
 
 ```shell
