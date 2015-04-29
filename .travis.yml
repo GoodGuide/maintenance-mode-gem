@@ -17,6 +17,7 @@ deploy:
   gem: maintenance_mode
   on:
     repo: GoodGuide/maintenance_mode
+    tags: true
 
 notifications:
   slack: goodguide:ht5WFmKFhguaSwbDaIIr8kur

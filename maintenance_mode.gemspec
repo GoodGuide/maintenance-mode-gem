@@ -5,11 +5,7 @@ require 'maintenance_mode/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'maintenance_mode'
-  if ENV['TRAVIS']
-    spec.version       = "#{MaintenanceMode::VERSION}.patch.#{ENV['TRAVIS_BUILD_NUMBER']}"
-  else
-    spec.version       = MaintenanceMode::VERSION
-  end
+  spec.version       = MaintenanceMode::VERSION
   spec.authors       = ["Ryan Taylor Long"]
   spec.email         = ["ryan.long@goodguide.com"]
   spec.summary       = "This provides a simple interface to a 'maintenance mode' toggle with optional maintenance message."
