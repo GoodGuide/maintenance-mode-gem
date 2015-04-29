@@ -4,6 +4,8 @@ This provides a simple interface to a "maintenance mode" toggle with optional
 maintenance message. It's not specific to maintenance mode, really, and could be
 used whenever a similar switch is needed.
 
+[![Build Status](https://travis-ci.org/GoodGuide/maintenance_mode.svg?branch=master)](https://travis-ci.org/GoodGuide/maintenance_mode)
+
 ## Usage
 
 ```ruby
