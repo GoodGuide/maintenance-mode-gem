@@ -7,3 +7,6 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task default: :test
+
+# rubygems releases are done by Travis
+Rake::Task['release:rubygem_push'].clear
