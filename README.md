@@ -22,7 +22,15 @@ There are also rake tasks to toggle MaintenanceMode:
 ```shell
 rake maintenance:enable
 rake maintenance:enable MESSAGE="Oh Noes!"
+rake 'maintenance:enable[Oh Noes!]' # also works
 rake maintenance:disable
+```
+
+To get these tasks, you'll have to add this line to your `Rakefile`:
+
+```ruby
+# Rakefile
+require 'maintenance_mode/rake_tasks'
 ```
 
 ## Configuration
