@@ -8,6 +8,12 @@ class MaintenanceMode::FilePersistenceTest < Minitest::Test
     Pathname.new(@tempfile.path)
   end
 
+  def set_contents(contents)
+    File.open(_file, 'w') do |file|
+      file.write contents
+    end
+  end
+
   def setup
     _file.unlink
   end
@@ -41,7 +47,7 @@ class MaintenanceMode::FilePersistenceTest < Minitest::Test
   end
 
   def test_disable
-    _file.write('foo')
+    set_contents('foo')
     assert _file.file?, 'file should exist'
     subject.disable
 
@@ -55,20 +61,20 @@ class MaintenanceMode::FilePersistenceTest < Minitest::Test
   end
 
   def test_enabled?
-    _file.write('foo')
+    set_contents('foo')
     assert subject.enabled?
     _file.unlink
     assert !subject.enabled?
   end
 
   def test_message
-    _file.write('foobar')
+    set_contents('foobar')
 
     assert_equal 'foobar', subject.message
   end
 
   def test_message_when_empty
-    _file.write('')
+    set_contents('')
 
     assert_equal nil, subject.message
   end

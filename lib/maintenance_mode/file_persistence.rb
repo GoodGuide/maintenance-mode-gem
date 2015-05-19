@@ -11,7 +11,9 @@ class MaintenanceMode
     end
 
     def enable(message='')
-      @pathname.write(message)
+      File.open(@pathname.to_s, 'w') do |f|
+        f.write(message)
+      end
     end
 
     def disable

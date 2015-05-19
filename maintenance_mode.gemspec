@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'http://github.com/goodguide/maintenance_mode'
   spec.license       = 'MIT'
 
-  spec.required_ruby_version = '>= 2.1.0'
+  spec.required_ruby_version = '>= 2.0.0'
 
   all_files = `git ls-files -z`.split("\x0")
   spec.files         = all_files - all_files.grep(%r{^.travis.yml})
