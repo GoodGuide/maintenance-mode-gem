@@ -1,0 +1,5 @@
+require 'maintenance_mode/rake_tasks'
+
+task 'maintenance:configure' do
+  require_relative './maintenance_mode_config'
+end

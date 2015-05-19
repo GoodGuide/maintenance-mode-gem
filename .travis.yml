@@ -1,0 +1,24 @@
+language: ruby
+rvm:
+  - 2.2.0
+  - 2.1.0
+  - 2.0.0
+  - jruby-20mode
+  - rbx-2
+  - ruby-head
+  - jruby-head
+before_install: gem install bundler
+
+bundler_args: --jobs=4 --retry=5
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: "W+pWQIBNMQBTwRniG4ONh6XgndO/AjqbfZkqy57A0FuhHC55tIrQhiwWIWXip1lTlqVygVLpywgr4uye8BKmCdJb6ScxaO6OGDHKfwqWLRSdD7+wleKlxSHNhkj6yFYkb3KdCftsvyucOqqF2V004qAPpUKvnnt6abNd/2Ke2vI="
+  gem: maintenance_mode
+  on:
+    repo: GoodGuide/maintenance_mode
+    tags: true
+
+notifications:
+  slack: goodguide:ht5WFmKFhguaSwbDaIIr8kur

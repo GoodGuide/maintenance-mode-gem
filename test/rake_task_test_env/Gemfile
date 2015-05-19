@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+gem 'maintenance_mode', path: '../../'
+gem 'rake'
